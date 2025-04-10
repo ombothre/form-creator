@@ -2,7 +2,7 @@ import random
 from cluster import CLUSTERS  # Ensure this module exists and is accessible
 
 def generate_form():
-    n = random.randint(1, 7)
+    n = random.randint(1, 6)
     random.seed(n)
     optional_keys = list(CLUSTERS.keys())
     optional_keys.remove("bio_data")  # bio_data always included
