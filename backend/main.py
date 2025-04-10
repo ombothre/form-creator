@@ -5,11 +5,10 @@ import os
 import logging
 from helpers import generate_form, wrap_with_html
 
-# Set up logging
 logging.basicConfig(
-    filename="app.log",  # Log file name
     level=logging.INFO,  # Logging level
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+    handlers=[logging.StreamHandler()]  # Log to console
 )
 logger = logging.getLogger(__name__)
 
@@ -17,7 +16,7 @@ app = FastAPI()
 
 os.makedirs("generated", exist_ok=True)
 
-@app.get("/generate-form", response_class=HTMLResponse)
+@app.get("api/generate-form/html", response_class=HTMLResponse)
 def get_form():
     try:
         logger.info("Generating form...")
