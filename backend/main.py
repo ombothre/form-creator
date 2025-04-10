@@ -16,4 +16,4 @@ def get_form():
         full_html = wrap_with_html(form_html)
         return full_html
     except Exception as e:
-        raise HTTPException(status_code=500, detail="An error occurred while generating the form.")
+        raise HTTPException(status_code=500, detail=str(e))
