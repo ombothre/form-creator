@@ -1,7 +1,8 @@
-import random
+import random, time
 from cluster import CLUSTERS  # Ensure this module exists and is accessible
 
 def generate_form():
+    random.seed(time.time_ns())
     n = random.randint(1, 6)
     optional_keys = list(CLUSTERS.keys())
     optional_keys.remove("bio_data")  # bio_data always included
